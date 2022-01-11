@@ -1,5 +1,6 @@
 import requests
 import json
+import os
 
 # URL and query parameters for the API requests.
 url = "https://crmapi.upgrad.com/consumer/v2/profile/list"
@@ -22,7 +23,7 @@ while len(response.json()) > 0:
     query_params["page"] += 1
     
     response = requests.get(url, params=query_params)
-print("Extracted mentor data values : " + str(len(scrapped_data)))
+print("Extracted mentor data values: " + str(len(scrapped_data)))
 
 # Attributes to be filtered out of each mentor data valued to the default value in case the attribute is NA in scrapped data.
 keys_to_extract = {
@@ -50,9 +51,14 @@ for mentor in scrapped_data[:]:
 print("Final no. of values produced: " + str(len(scrapped_data)))
 
 # Storing data to a JSON file.
-data_store_file  = "../assets/data.json"
+data_store_file_dir = "../assets"
+data_store_file_name = "data.json"
 
-with open(data_store_file, "w") as data_file:
+if not os.path.isdir(data_store_file_name):
+    os.mkdir("../assets")
+
+
+with open(data_store_file_dir+"/"+data_store_file_name, "w") as data_file:
     json.dump(scrapped_data, data_file)
 
-print("Data store at : " + data_store_file)
+print("Data stored at: " + data_store_file_dir + "/" + data_store_file_name)
