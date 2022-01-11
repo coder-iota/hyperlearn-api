@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
     // Slicing the JSON data for required data
     try{
         const requestedData = mentorData.slice(offset, Math.min(offset+limit, mentorData.length));
-        res.send(requestedData);
+        res.json(requestedData);
     } catch(err){
         res.sendStatus(500)
         console.log("Error in slicing");
