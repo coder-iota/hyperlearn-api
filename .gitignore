@@ -1,2 +1,4 @@
 venv/
-/assets/data.json
+/assets/
+/new-api/node_modules/
+/new-api/package-lock.json
