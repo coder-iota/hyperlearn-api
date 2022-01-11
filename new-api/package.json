@@ -1,0 +1,15 @@
+{
+  "name": "new-api",
+  "version": "1.0.0",
+  "description": "New API to be used for getting data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "coder_iota",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2"
+  }
+}
