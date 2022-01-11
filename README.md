@@ -30,7 +30,7 @@ Before running the application for the first time, install the node dependencies
 ```
 npm install
 ```
-
+with `new-api` directory as the current working directory.  
 Then run the application using,
 ```
 node index.js
